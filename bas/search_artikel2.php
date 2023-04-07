@@ -20,7 +20,7 @@ include ("header.php");
 <?php
 
 require "conn.php";			// nodig om object te maken
-require "Artikelen.php";	// verbinding maken database
+require "Artikel.php";	// verbinding maken database
 
 // uitlezen vakje van searchStudentForm1 -------------------------
 $artid = $_POST["artikelnaam"];

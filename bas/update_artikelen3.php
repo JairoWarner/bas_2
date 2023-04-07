@@ -20,7 +20,7 @@ include ("header.php");
         <div class="formCreate">
             <div class="formCenter">
 <?php
-require "Artikelen.php";
+require "Artikel.php";
 
 
 // gegevens uit de array in variabelen stoppen

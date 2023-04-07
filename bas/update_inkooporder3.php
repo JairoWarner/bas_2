@@ -20,7 +20,7 @@ $inkOrdStatus = $_POST["inkOrdStatus"];
 
 
 // maken object ---------------------------------------------------
-$inkOrd1 = new InkoopOrder($levID, $artID, $inkOrdDatum, $inkOrdBestAantal, $inkOrdStatus); // maakt object
+$inkOrd1 = new InkoopOrder(NULL, $levID, $artID, $inkOrdDatum, $inkOrdBestAantal, $inkOrdStatus); // maakt object
 $inkOrd1->updateInkOrder($inkOrdID);		           // vervangt de tabelgegevens voor objectgegevens
 echo "Dit zijn de gewijzigde gegevens: <br/>";
 echo $inkOrdID."<br/>";

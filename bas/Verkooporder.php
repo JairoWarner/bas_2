@@ -8,18 +8,18 @@ class Verkooporder
     protected $KlantID;
     protected $artID;
     protected $verkOrdDatum;
-    protected $varkOrdBestAantal;
+    protected $verkOrdBestAantal;
     protected $verkOrdStatus;
 
     // methoden - functies -------------------
     // constructor
-    public function __construct($verOrdID = NULL, $KlantID = NULL, $artID = NULL, $verkOrdDatum = NULL, $varkOrdBestAantal = NULL, $verkOrdStatus = NULL)
+    public function __construct($verOrdID = NULL, $KlantID = NULL, $artID = NULL, $verkOrdDatum = NULL, $verkOrdBestAantal = NULL, $verkOrdStatus = NULL)
     {
         $this->verOrdID = $verOrdID;
         $this->KlantID = $KlantID;
         $this->artID = $artID;
         $this->verkOrdDatum = $verkOrdDatum;
-        $this->varkOrdBestAantal = $varkOrdBestAantal;
+        $this->verkOrdBestAantal = $verkOrdBestAantal;
         $this->verkOrdStatus = $verkOrdStatus;
     }
 
@@ -44,9 +44,9 @@ class Verkooporder
         $this->verkOrdDatum = $verkOrdDatum;
     }
 
-    public function set_varkOrdBestAantal($varkOrdBestAantal)
+    public function set_verkOrdBestAantal($verkOrdBestAantal)
     {
-        $this->varkOrdBestAantal = $varkOrdBestAantal;
+        $this->verkOrdBestAantal = $verkOrdBestAantal;
     }
 
     public function set_verkOrdStatus($verkOrdStatus)
@@ -75,9 +75,9 @@ class Verkooporder
         return $this->verkOrdDatum;
     }
 
-    public function get_varkOrdBestAantal()
+    public function get_verkOrdBestAantal()
     {
-        return $this->varkOrdBestAantal;
+        return $this->verkOrdBestAantal;
     }
 
     public function get_verkOrdStatus()
@@ -90,7 +90,7 @@ class Verkooporder
     {
         echo $this->get_verkOrdDatum();
         echo "<br/>";
-        echo $this->get_varkOrdBestAantal();
+        echo $this->get_verkOrdBestAantal();
         echo "<br/>";
         echo $this->get_verkOrdStatus();
         echo "<br/><br/>";
@@ -104,11 +104,11 @@ class Verkooporder
         $klantID = $this->get_KlantID();
         $artID = $this->get_artID();
         $verkOrdDatum = $this->get_verkOrdDatum();
-        $varkOrdBestAantal = $this->get_varkOrdBestAantal();
+        $verkOrdBestAantal = $this->get_verkOrdBestAantal();
         $verkOrdStatus = $this->get_verkOrdStatus();
 
         $sql = "INSERT INTO verkooporders (KlantID, artID, verkOrdDatum, varkOrdBestAantal, verkOrdStatus)
-            VALUES ('$klantID', '$artID', '$verkOrdDatum', '$varkOrdBestAantal', '$verkOrdStatus')";
+            VALUES ('$klantID', '$artID', '$verkOrdDatum', '$verkOrdBestAantal', '$verkOrdStatus')";
 
         // voer de query uit
         if (mysqli_query($con, $sql)) {
@@ -140,7 +140,7 @@ class Verkooporder
         foreach ($sql as $lverkooporder) {
             echo '<tr>';
             echo '<td>' . $lverkooporder['verkOrdDatum'] . '</td>';
-            echo '<td>' . $lverkooporder['varkOrdBestAantal'] . '</td>';
+            echo '<td>' . $lverkooporder['verkOrdBestAantal'] . '</td>';
             echo '<td>' . $lverkooporder['verkOrdStatus'] . '</td>';
             echo '<td><a href="create_verkooporder.php">Create</a></td>';
             echo '<td><a href="?delete=' . $lverkooporder['verOrdID'] . '">Delete</a></td>';
@@ -160,18 +160,14 @@ class Verkooporder
         require 'conn.php';
 
         $datum = $this->get_verkOrdDatum();
-        $aantal = $this->get_verkOrdStatus();
+        $aantal = $this->get_verkOrdBestAantal();
         $status = $this->get_verkOrdStatus();
 
 
-        $sql = "UPDATE verkooporders
-    SET verkOrdDatum = '$datum', 
-        varkOrdBestAantal = '$aantal', 
-        verkOrdStatus= '$status', 
-    WHERE verOrdID = $verid;";
+        $sql = "UPDATE verkooporders SET verkOrdDatum = '$datum', verkOrdBestAantal = '$aantal', verkOrdStatus = '$status' WHERE verOrdID = $verid";
 
         if (mysqli_query($con, $sql)) {
-            echo "<p class='klantUpdated'>Verkooporder succesvol bijgewerkt!</p>";
+            echo "<p class='VerOrdUpdated'>Verkooporder succesvol bijgewerkt!</p>";
         } else {
             echo "Fout bij het bijwerken van de verkooporder: " . mysqli_error($con);
         }
@@ -183,9 +179,9 @@ class Verkooporder
 
         // prepare statement
         $sql = $conn->prepare("
-        SELECT verOrdID,KlantID,artID, verkOrdDatum, varkOrdBestAantal, verkOrdStatus
+        SELECT verOrdID, KlantID, artID, verkOrdDatum, verkOrdBestAantal, verkOrdStatus
         FROM verkooporders
-        WHERE verOrdID = :verOrdID
+        WHERE verOrdID = :verID
     ");
 
         // bind parameter to statement
@@ -195,7 +191,7 @@ class Verkooporder
         // get data from array and assign to object properties
         foreach ($sql as $verkoop) {
            $this->verkOrdDatum = $verkoop["verkOrdDatum"];
-           $this->varkOrdBestAantal = $verkoop["varkOrdBestAantal"];
+           $this->verkOrdBestAantal = $verkoop["verkOrdBestAantal"];
            $this->verkOrdStatus = $verkoop["verkOrdStatus"];
         }
 

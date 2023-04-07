@@ -186,8 +186,7 @@ class Klant
         $sql->execute();
 
         // get data from array and assign to object properties
-        foreach
-        ($sql as $klant) {
+        foreach ($sql as $klant) {
             $this->naam = $klant["klantNaam"];
             $this->mail = $klant["klantEmail"];
             $this->adres = $klant["klantAdres"];

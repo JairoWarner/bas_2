@@ -15,7 +15,7 @@ include ("header.php");
 <body>
 <h1>update Verkooporder</h1>
 <form action="update_verkooporder2.php" method="post">
-    <label for="verid">Leverancier ID:</label>
+    <label for="verid">VerkooporderID:</label>
     <input type="text" id = "verid" name="verIdVak">
     <input type="submit">
 </form>

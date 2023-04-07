@@ -19,7 +19,7 @@ $status = $_POST["status"];
 
 
 // maken object ---------------------------------------------------
-$verkoop = new Verkooporder($datum, $aantal, $status); // maakt object
+$verkoop = new Verkooporder(NULL, NULL, NULL, $datum, $aantal, $status); // maakt object
 $verkoop->updateVerkooporder($verid);		           // vervangt de tabelgegevens voor objectgegevens
 echo "Dit zijn de gewijzigde gegevens: <br/>";
 echo $verid."<br/>";

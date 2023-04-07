@@ -2,6 +2,7 @@
 
 include("conn.php");
 include("header.php");
+require "Artikel.php";
 
 
 
@@ -16,9 +17,9 @@ $LevID = $_POST["LevID"];
 
 
 // maken object -------------------------------
-$art1 = new Artikelen ($artOm, $artIn, $artVer, $artVo, $artMin, $artMax, $artLo, $LevID);
+$art1 = new Artikel ($artOm, $artIn, $artVer, $artVo, $artMin, $artMax, $artLo, $LevID);
 // object in de database zetten
-$art1>createArtikel();
+$art1->createArtikel();
 // afdrukken object ---------------------------
 echo "Het volgende opject is gemaakt: <br/>";
 $art1->afdrukken();

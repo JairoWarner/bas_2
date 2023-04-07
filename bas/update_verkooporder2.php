@@ -20,7 +20,7 @@ $verkoop1 = new Verkooporder();				// object aanmaken
 $verkoop1->searchverkooporder($verid);
 // properties in variabelen zetten
 $datum = $verkoop1->get_verkOrdDatum();
-$aantal = $verkoop1->get_varkOrdBestAantal();
+$aantal = $verkoop1->get_verkOrdBestAantal();
 $status = $verkoop1->get_verkOrdStatus();
 
 ?>

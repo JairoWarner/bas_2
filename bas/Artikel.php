@@ -144,7 +144,7 @@ class Artikel
         $Locatie = $this->get_Locatie();
         $Leverancier = $this->get_Leverancier();
 
-        $sql = "INSERT INTO Artikelen ( Omschrijving, Inkoop, Verkoop, Voorraad, Minimum, Maximum, Locatie, Leverancier)
+        $sql = "INSERT INTO Artikelen ( artOmschrijving, artInkoop, artVerkoop, artVoorraad, artMinVoorraad, artMaxVoorraad, artLocatie, LevID)
             VALUES (' $Omschrijving', '$Inkoop', '$Verkoop', '$Voorraad', '$Minimum', '$Maximum', '$Locatie', '$Leverancier')";
 
 // voer de query uit
@@ -203,7 +203,7 @@ class Artikel
         $Maximum = $this->get_Maximum();
         $Locatie = $this->get_Locatie();
 
-        $sql = "UPDATE artikelen SET artOmschrijving = '$Omschrijving', artInkoop = '$Inkoop', artVerkoop = '$Verkoop', artVoorraad = '$Voorraad', artrMinVoorraad = '$Minimum', artMaxVoorraad = '$Maximum', artLocatie = '$Locatie' WHERE artID = $artID";
+        $sql = "UPDATE artikelen SET artOmschrijving = '$Omschrijving', artInkoop = '$Inkoop', artVerkoop = '$Verkoop', artVoorraad = '$Voorraad', artMinVoorraad = '$Minimum', artMaxVoorraad = '$Maximum', artLocatie = '$Locatie' WHERE artID = $artID";
 
         if (mysqli_query($con, $sql)) {
             echo "<p class='artUpdated'>Artikel succesvol bijgewerkt!</p>";
@@ -234,7 +234,7 @@ class Artikel
             $this->Verkoop = $artikel["artVerkoop"];
             $this->Voorraad = $artikel["artVoorraad"];
             $this->Voorraad = $artikel["artVoorraad"];
-            $this->Voorraad = $artikel["art,MinVoorraad"];
+            $this->Voorraad = $artikel["artMinVoorraad"];
             $this->Voorraad = $artikel["artMaxVoorraad"];
             $this->Voorraad = $artikel["artLocatie"];
     }

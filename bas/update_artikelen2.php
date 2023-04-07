@@ -1,6 +1,6 @@
 <?php
 include ("header.php");
-require "Artikelen.php";
+require "Artikel.php";
 $artID = $_POST ["artIdVak"];
 $art1 = new Artikel();
 $art1->searchArtikel($artID);

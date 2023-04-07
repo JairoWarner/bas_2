@@ -12,7 +12,7 @@
 <?php
 include ("header.php");
 include("conn.php");
-include("Artikelen.php");
+include("Artikel.php");
 ?><div class="readContent">
     <div class="readCreate">
         <div class="readCenter">
