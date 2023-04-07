@@ -1,0 +1,268 @@
+
+body {
+    margin: 0;
+    background-color: white;
+
+}
+
+footer {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+.left{
+    font-size: 1.3em;
+}
+
+.logUit  {
+    font-size: 1.3em;
+    margin-left: auto;
+}
+nav {
+    overflow: hidden;
+    background-color: #b00000;
+    display: flex;
+    padding: 14px 14px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+nav a {
+    float: left;
+    font-size: 1.0em;
+    color: white;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+}
+
+
+.text_logo {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    font-size: 1.0em;
+}
+
+
+nav a:hover, nav .dropdown:hover, nav .dropbtn {
+
+    background: grey;
+
+    border-radius: 5px;
+}
+
+nav .dropdown {
+    float: left;
+    overflow: hidden;
+    display: flex;
+    font-size: 1.3em;
+}
+
+nav .dropdown .dropbtn {
+    font-size: 1.0em;
+display: flex;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 16px 19px;
+    background-color: inherit;
+
+    margin: 0;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 50px;
+    font-size: 1.0em;
+}
+
+nav .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 1.0em;
+}
+
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.login {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.formCreate {
+    box-shadow: 10px 10px 50px rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 700px;
+    padding: 10px;
+    background: #b00000;
+    margin: 40px;
+
+
+}
+
+form label {
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+input {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px;
+
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+
+}
+
+.formContent {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+}
+
+.formCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.submitButton input {
+    font-weight: bold;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.submitButton_leverancier input {
+    font-weight: bold;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.backMenu{
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+    padding: 60px;
+
+}
+
+.backMenu button a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 30px;
+    color: white;
+}
+
+.backMenu button{
+    background: red;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.klantStandaard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.klantStandaard h1{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+.klantid{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.formCreate_leverancier{
+    box-shadow: 10px 10px 50px rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 750px;
+    padding: 10px;
+    background: #b00000;
+    margin: 40px;
+}
+
+.readCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.readContent{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.readCreate {
+    box-shadow: 10px 10px 50px rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 700px;
+    padding: 10px;
+    background: #b00000;
+    margin: 40px;
+}
+.center{
+    text-align: center;
+}
+
+a{
+    color: blue;
+}
